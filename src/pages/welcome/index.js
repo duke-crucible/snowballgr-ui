@@ -93,7 +93,7 @@ export default function Welcome() {
               <p>
                 <b>Participants</b>: the users who are the people that the study
                 team has interest to enroll for the study. The original
-                participants who have been diagnosed positive are call "Seed".
+                participants who have been diagnosed positive are called "Seed".
                 Study Team sends the seed a link to enroll to the study. The
                 link contains an unique 4 words combination which will lead the
                 seed to confirm the contact information, fill the consent, fill
@@ -121,7 +121,7 @@ export default function Welcome() {
                 API repository "snowballgr". It is deployed to Azure Cloud. You
                 can choose your own cloud platform to run the application. This
                 application uses external services:
-                <a href="https://sendgrid.com/">Twilio SendGrid </a>
+                <a href="https://sendgrid.com/">Twilio SendGrid</a>
                 for email service,
                 <a href="https://azure.microsoft.com/en-us/services/communication-services/">
                   Azure Communication Service
@@ -159,7 +159,7 @@ export default function Welcome() {
               <h4>3.Survey</h4>
               This project supports study team to create their own surveys by
               using{" "}
-              <a href="https://surveyjs.io/create-survey">SurveyJS Creator </a>
+              <a href="https://surveyjs.io/create-survey">SurveyJS Creator</a>
               Check out{" "}
               <a href="https://surveyjs.io/Examples/Survey-Creator/">
                 SurveyJS Creator example here

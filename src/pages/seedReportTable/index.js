@@ -13,11 +13,15 @@ function SeedReport(props) {
   const [dataSource, setDataSource] = useState([]);
   const [modelShow, setModelShow] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [currentPageSize, setPageSize] = useState(10);
   const [refetch, setRefetch] = useState(true);
   const [paginationProps, setPaginationProps] = useState({
-    pageSize: 10,
+    pageSize: currentPageSize,
     current: currentPage,
-    onChange: (current) => setCurrentPage(current),
+    onChange: (current, pageSize) => {
+      setCurrentPage(current);
+      setPageSize(pageSize);
+    }
   });
   const [searchParams, setSearchParams] = useState({});
   const [resetFilter, setResetFilter] = useState(true);
@@ -27,9 +31,10 @@ function SeedReport(props) {
       return {
         ...p,
         current: currentPage,
+        pageSize: currentPageSize,
       };
     });
-  }, [currentPage]);
+  }, [currentPage, currentPageSize]);
 
   const AddDataOK = (data) => {
     setModelShow(false);
@@ -54,8 +59,8 @@ function SeedReport(props) {
       }
     });
     setSearchParams(params);
-    setRefetch(true);
     setResetFilter(false);
+    setRefetch(true);
   };
 
   const fetchData = () => {
@@ -89,6 +94,8 @@ function SeedReport(props) {
       if (resetFilter) setSearchParams({});
       setRefetch(false);
       fetchData();
+    } else {
+      setResetFilter(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [refetch]);
