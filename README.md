@@ -10,13 +10,13 @@ Snowballgr-UI is the frontend of SnowballGR applicaiton. It is based on [Create 
 
 ## Local Development
 
-You will need [docker-compose](https://docs.docker.com/compose/). Details of the local app cluster are documented in the docker-compose.yml(docker-compose.yml) file itself.
+Use [yarn](https://classic.yarnpkg.com/en/) to manage packages. It is like npm but uses a cache to install packages faster.
 
 ### Environment variables
 
 One environment variable `REACT_APP_API_ROOT` must be set in `.env` file before running this stack locally. There is `.env.example` file in the repo that you may copy to `.env` file for running locally.
 
-### Instal and Run
+### Install and Run
 
 1. Clone this repo:
 
@@ -35,15 +35,15 @@ One environment variable `REACT_APP_API_ROOT` must be set in `.env` file before 
    Make sure you have Docker installed and running on your local, use below docker-compose commands to build and run:
 
    ```bash
-   docker-compose build
-   docker-compose up
+   yarn install
+   yarn start
    ```
 
    Now you should have a running React app at http://localhost:3000.
 
 4. Integrate with API
 
-   Follow [instructions](https://github.com/duke-crucible/snowballgr-api/-/tree/dev#local-development) to bring up a local instance of Snowballgr-API.
+   Follow [instructions](https://github.com/duke-crucible/snowballgr-api#local-development) to bring up a local instance of Snowballgr-API.
 
 5. Shell into the container:
    ```bash
@@ -58,7 +58,7 @@ CI/CD configuration is not included in this repo. You need to add your own CICD 
 
 ## Deployment
 
-This project can be deployed to any cloud services, e.g. Azure, AWS. Below is a step-by-step guide to deploy snowballgr-ui to Azure App Service from [Azure Portal](https://portal.azure.com), refer to [Azure Documents](https://docs.microsoft.com/en-us/azure/?product=featured) for more information on deployment to Azure. Note before this deployment you should have completed [snowballgr-api deployment](https://github.com/duke-crucible/snowballgr-api/-/tree/dev#deployment), if not, follow the link to bring up SnowballGR backend application and mongo db.
+This project can be deployed to any cloud services, e.g. Azure, AWS. Below is a step-by-step guide to deploy snowballgr-ui to Azure App Service from [Azure Portal](https://portal.azure.com), refer to [Azure Documents](https://docs.microsoft.com/en-us/azure/?product=featured) for more information on deployment to Azure. Note before this deployment you should have completed [snowballgr-api deployment](https://github.com/duke-crucible/snowballgr-api#deployment), if not, follow the link to bring up SnowballGR backend application and mongo db.
 
 1. Build, tag and push docker image to acr, this can be done from your terminal or from IDE (e.g. VSCode). Below is an example of doing so from terminal, assuming the resource group is named `Snowballgr-RG` and the acr name is `snowballgracr`
 
