@@ -45,12 +45,7 @@ One environment variable `REACT_APP_API_ROOT` must be set in `.env` file before 
 
    Follow [instructions](https://github.com/duke-crucible/snowballgr-api#local-development) to bring up a local instance of Snowballgr-API.
 
-5. Shell into the container:
-   ```bash
-   docker-compose exec app bash
-   ```
-
-As you edit code the server will automatically reload to pick up your changes. Sometimes you might need to shut down the server and rebuild the Docker images, for example if you add a new dependency. You can do this with `docker-compose stop` followed by `docker-compose build` and then restart the server with `docker-compose up`.
+As you edit code the server will automatically reload to pick up your changes. 
 
 ## CI/CD
 
