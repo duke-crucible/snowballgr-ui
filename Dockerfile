@@ -1,5 +1,5 @@
 # building react app first
-FROM node:16.8 as base
+FROM image-mirror-prod-registry.cloud.duke.edu/library/node:16.8 as base
 WORKDIR /app
 
 FROM base as build
