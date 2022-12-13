@@ -21,10 +21,10 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 RUN apk add --no-cache bash
 # This script turns environment variables into javascript variables that can be
 # loaded at runtime.
-# change group to GID 0 for openshif deployment.
+# change group to GID 0 for openshift deployment.
+RUN chmod 777 -R /docker-entrypoint.d
 RUN chgrp -R 0 /docker-entrypoint.d && \
     chmod -R g=u /docker-entrypoint.d
-#RUN chmod 777 -R /docker-entrypoint.d
 COPY env.sh /docker-entrypoint.d/02-create-app-env.sh
 RUN chmod 775 /docker-entrypoint.d/02-create-app-env.sh
 CMD ["nginx", "-e", "stderr", "-g", "daemon off;"]
