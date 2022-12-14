@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Recreate config file
+set -euxo pipefail
 
 # Add assignment 
 echo "window._env_ = {" >> ./env-config.js
