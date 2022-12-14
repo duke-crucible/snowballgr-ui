@@ -2,6 +2,8 @@
 
 set -euxo pipefail
 
+pwd
+
 # Add assignment 
 echo "window._env_ = {" >> ./env-config.js
 
