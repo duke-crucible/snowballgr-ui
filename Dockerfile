@@ -22,7 +22,9 @@ RUN apk add --no-cache bash
 # This script turns environment variables into javascript variables that can be
 # loaded at runtime.
 # change group to GID 0 for openshift deployment.
-RUN chmod 777 -R /docker-entrypoint.d
+RUN touch /env-config.js
+RUN chgrp 0 /env-config.js && \
+    chmod g=u /env-config.js
 RUN chgrp -R 0 /docker-entrypoint.d && \
     chmod -R g=u /docker-entrypoint.d
 COPY env.sh /docker-entrypoint.d/02-create-app-env.sh
