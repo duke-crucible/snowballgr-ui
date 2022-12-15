@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set some extra output
-set -euxo pipefail
+set -euo pipefail
 
 # Add assignment 
 echo "window._env_ = {" >> ./env-config.js
