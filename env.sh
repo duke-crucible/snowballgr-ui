@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# Recreate config file
-rm -rf ./env-config.js
-touch ./env-config.js
+# set some extra output
+set -euo pipefail
 
 # Add assignment 
 echo "window._env_ = {" >> ./env-config.js
